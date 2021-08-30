@@ -37,7 +37,6 @@ li {
 
 footer {
     width: 100%;
-    background-color: rgba(165, 0, 81, 0.7);
 }
 
 #txtsplash {
@@ -97,6 +96,7 @@ footer {
     padding: .1rem;
     column-gap: 15%;
     padding: 2.5px;
+    background-color: rgb(165, 0, 81);
 }
 
 .pwrapper {
