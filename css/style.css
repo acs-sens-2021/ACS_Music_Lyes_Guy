@@ -105,6 +105,15 @@ footer {
     column-gap: 2%;
 }
 
+.awrapper {
+    display: grid;
+    grid-column: auto;
+    row-gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1.5rem;
+}
+
 .case1 {
     grid-column: 1;
     grid-row: 1;
@@ -178,11 +187,24 @@ footer {
     margin-left: 30%;
     margin-right: 30%;
 }
-.acase0{
+
+.acase0 {
     grid-column: 1;
     grid-row: 1;
-   margin-left: 50%;
-   transform: translateX(-50%);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.acase1,
+.acase2,
+.acase3,
+.acase4,
+.acase5,
+.acase6,
+.acase7,
+.acase8 {
+    max-width: 4rem;
+    background: white;
 }
 
 .acase1 {
@@ -223,4 +245,50 @@ footer {
 .acase8 {
     grid-column: 4;
     grid-row: 2;
+}
+
+.diapo {
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+}
+
+#nav-droite,
+#nav-gauche {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3em;
+    cursor: pointer;
+}
+
+#nav-droite {
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12%;
+}
+
+#nav-gauche {
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12%;
+}
+
+.elements {
+    display: flex;
+    transition: 1s linear;
+}
+
+.element {
+    flex: 1 0 100%;
+    position: relative;
+}
+
+.element>img {
+    width: 100%;
+}
+
+.carou_padd {
+    padding-top: 0;
 }
