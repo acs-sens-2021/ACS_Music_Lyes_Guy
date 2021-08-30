@@ -50,6 +50,17 @@ footer {
     background-color: rgb(81, 165, 0);
 }
 
+#txtsplash2 {
+    font-size: larger;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+    color: white;
+    border: solid black 1.5px;
+    background-color: rgb(0, 81, 165);
+}
+
 .picturediv {
     width: 70%;
     height: 60%;
