@@ -1,5 +1,3 @@
-// CAROUSSEL DE PROJETS
-
 const diapo = document.querySelector(".diapo");
 
 let timer, elements, slides, slideWidth;
@@ -37,4 +35,3 @@ function slidePrev() {
     elements.style.transform = `translateX(${decal}px`;
 }
 
-// FIN CAROUSSEL DE PROJETS
