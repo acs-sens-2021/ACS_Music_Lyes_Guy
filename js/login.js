@@ -23,7 +23,8 @@ btn.addEventListener("click", function () {
         })
         .then(function (json) {
             if (json != null) {
-                localStorage.setItem("token", json.token);
+                sessionStorage.setItem("token", json.token);
+                window.location.replace("./accueil.html");
             }
         })
 });

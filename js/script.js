@@ -1,3 +1,5 @@
+// Carousel
+
 const diapo = document.querySelector(".diapo");
 
 let timer, elements, slides, slideWidth;
