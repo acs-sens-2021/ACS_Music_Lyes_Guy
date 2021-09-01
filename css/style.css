@@ -110,7 +110,7 @@ footer {
 
 .m_buttons {
     background-color: rgb(81, 165, 0);
-    padding: 2px;
+    padding:2px;
 }
 
 .uncolor {
@@ -121,7 +121,7 @@ footer {
 
 .wrapper {
     display: grid;
-    padding-top: 2rem;
+    padding-top: 4rem;
     grid-column: auto;
     row-gap: 3rem;
 }
@@ -129,9 +129,9 @@ footer {
 .fwrapper {
     display: grid;
     grid-column: auto;
-    padding: .1rem;
+    padding: .3rem;
     column-gap: 15%;
-    padding: 2.5px;
+    padding: 6px;
     background-color: rgb(165, 0, 81);
 }
 
@@ -176,7 +176,7 @@ footer {
 }
 
 .fcase1 {
-    max-width: 3.5rem;
+    max-width: 3.55rem;
     grid-column: 1;
     grid-row: 1;
 }
@@ -196,6 +196,11 @@ footer {
 .fcase4 {
     max-width: 3.5rem;
     grid-column: 4;
+    grid-row: 1;
+}
+.fcase5 {
+    max-width: 3.5rem;
+    grid-column: 5;
     grid-row: 1;
 }
 
@@ -226,6 +231,8 @@ footer {
     grid-row: 1;
     margin-left: 50%;
     transform: translateX(-50%);
+    padding: 7px;
+    
 }
 
 .acase1,
