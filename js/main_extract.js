@@ -10,8 +10,6 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
     })
     .then((response) => response.json())
     .then(function (json) {
-        console.log(json);
-
         for (let cnt = 0; cnt < 20; cnt += 1) {
             let elems = document.querySelector(".elements");
             let elem = document.createElement("div");
@@ -19,7 +17,7 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
 
             elem.classList.add("element");
             pict.src = json[cnt].picture;
-            pict.alt = "img d'album";
+            pict.alt = json[cnt].name;
             pict.style.width = "100%";
             pict.style.zIndex = "200";
             pict.classList.add("img_diapo");
@@ -27,6 +25,25 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
             elems.appendChild(elem);
         }
         my_carousel();
+    })
+// 
+fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc&page1", {
+        headers: {
+            'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
+            'Content-type': 'application/json; charset=UTF-8',
+        }
+    })
+    .then((response) => response.json())
+    .then(function (json) {
+        for (let cnt = 1; cnt <= 8; cnt += 1) {
+            let case_name = ".acase" + cnt;
+            console.log(case_name);
+            let my_case = document.querySelector(case_name);
+
+            console.log(my_case);
+            my_case.src = json[cnt].picture;
+            my_case.alt = json[cnt].name;
+      }
     })
 
 
