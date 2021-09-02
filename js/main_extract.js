@@ -13,9 +13,11 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
         for (let cnt = 0; cnt < 20; cnt += 1) {
             // Je cherche mon "elements" qui va contenir mes diapo et je créé une diapo
             let elems = document.querySelector(".elements");
+            let _link = document.createElement("a");
             let elem = document.createElement("div");
             let pict = document.createElement("img");
 
+            _link.href = "./details.html";
             // J'ajoute la classe "element" (sans le S) à ma div
             elem.classList.add("element");
             // J'indique l'image source et le alt de mon image de diapo
@@ -27,7 +29,8 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
             // J'ajoute la classe img_diapo à mon image de diapo
             pict.classList.add("img_diapo");
             // Je colle mon image dans mon elem puis je colle mon elem dans ma liste "elements"
-            elem.appendChild(pict);
+            _link.appendChild(pict);
+            elem.appendChild(_link);
             elems.appendChild(elem);
         }
         // J'appelle la fonction du carousel qui permet son fonctionnement
@@ -53,7 +56,7 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/?order=recently_played", {
                 .then((response) => response.json())
                 .then(function (json) {
                     // On choisi la case numéro [cnt]
-                    let case_name = ".acase" + cnt;
+                    let case_name = ".image_track" + cnt;
                     let my_case = document.querySelector(case_name);
 
                     // On met l'image source et l'alt de l'image à la case [cnt]
