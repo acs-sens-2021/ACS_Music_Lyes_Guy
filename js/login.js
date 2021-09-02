@@ -14,17 +14,11 @@ btn.addEventListener("click", function () {
             }
         })
 
-        .then(function(response) {
-            if (response.status === 200) {
-                return(response.json());
-            } else {
-                return (null);
-            }
+        .then(function (response) {
+            return (response.json());
         })
         .then(function (json) {
-            if (json != null) {
-                sessionStorage.setItem("token", json.token);
-                window.location.replace("./accueil.html");
-            }
+            sessionStorage.setItem("token", json.token);
+            window.location.replace("./accueil.html");
         })
 });

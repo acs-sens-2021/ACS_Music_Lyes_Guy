@@ -33,8 +33,8 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
         // J'appelle la fonction du carousel qui permet son fonctionnement
         my_carousel();
     })
-// 
-fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc&page1", {
+
+fetch("http://musics.logikstik.odns.fr/api/tracks/?order=recently_played", {
         headers: {
             'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
             'Content-type': 'application/json; charset=UTF-8',
@@ -42,15 +42,24 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc&p
     })
     .then((response) => response.json())
     .then(function (json) {
+        // Boucle qui va placer dans chaque case : l'image source et le nom en guise d'alt
         for (let cnt = 1; cnt <= 8; cnt += 1) {
-            // je défini le nom de la case que je vais chercher (ex: acase1, acase2 etc) en assemblant
-            // le compteur & ".acase" puis je vais la chercher
-            let case_name = ".acase" + cnt;
-            let my_case = document.querySelector(case_name);
+            fetch("http://musics.logikstik.odns.fr" + json[cnt].album, {
+                    headers: {
+                        'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
+                        'Content-type': 'application/json; charset=UTF-8',
+                    }
+                })
+                .then((response) => response.json())
+                .then(function (json) {
+                    // On choisi la case numéro [cnt]
+                    let case_name = ".acase" + cnt;
+                    let my_case = document.querySelector(case_name);
 
-            // Je défini l'image source et le alt de ma "acase"
-            my_case.src = json[cnt].picture;
-            my_case.alt = json[cnt].name;
+                    // On met l'image source et l'alt de l'image à la case [cnt]
+                    my_case.src = json.picture;
+                    my_case.alt = json.name;
+                })
         }
     })
 
