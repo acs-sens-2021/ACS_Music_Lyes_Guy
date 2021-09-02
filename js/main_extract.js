@@ -11,19 +11,26 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
     .then((response) => response.json())
     .then(function (json) {
         for (let cnt = 0; cnt < 20; cnt += 1) {
+            // Je cherche mon "elements" qui va contenir mes diapo et je créé une diapo
             let elems = document.querySelector(".elements");
             let elem = document.createElement("div");
             let pict = document.createElement("img");
 
+            // J'ajoute la classe "element" (sans le S) à ma div
             elem.classList.add("element");
+            // J'indique l'image source et le alt de mon image de diapo
             pict.src = json[cnt].picture;
             pict.alt = json[cnt].name;
+            // Je donne un Z-Index & je met le width 100%
             pict.style.width = "100%";
             pict.style.zIndex = "200";
+            // J'ajoute la classe img_diapo à mon image de diapo
             pict.classList.add("img_diapo");
+            // Je colle mon image dans mon elem puis je colle mon elem dans ma liste "elements"
             elem.appendChild(pict);
             elems.appendChild(elem);
         }
+        // J'appelle la fonction du carousel qui permet son fonctionnement
         my_carousel();
     })
 // 
@@ -36,14 +43,15 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc&p
     .then((response) => response.json())
     .then(function (json) {
         for (let cnt = 1; cnt <= 8; cnt += 1) {
+            // je défini le nom de la case que je vais chercher (ex: acase1, acase2 etc) en assemblant
+            // le compteur & ".acase" puis je vais la chercher
             let case_name = ".acase" + cnt;
-            console.log(case_name);
             let my_case = document.querySelector(case_name);
 
-            console.log(my_case);
+            // Je défini l'image source et le alt de ma "acase"
             my_case.src = json[cnt].picture;
             my_case.alt = json[cnt].name;
-      }
+        }
     })
 
 
