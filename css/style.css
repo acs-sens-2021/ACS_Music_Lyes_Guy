@@ -245,7 +245,8 @@ footer {
 .acase8 {
     max-width: 4rem;
     border: solid  rgb(255, 255, 255)1px;
-    border-radius: 10px 10px 10px 10px; 
+    
+    
     
    
 }
@@ -342,15 +343,15 @@ footer {
 
 }
 .la-home{
-    font-size: 40px;
+    font-size: 45px;
 }
 
 .la-heart{
-    font-size: 40px;
+    font-size: 45px;
 }
-.la-file-video{
-    font-size: 40px;
+.la-search{
+    font-size:45px;
 }
 .la-play{
-    font-size: 40px;
+    font-size: 45px;
 }
