@@ -65,7 +65,6 @@ footer {
     margin-bottom: 10%;
     text-align: center;
     color: white;
-    border: solid black 1.5px;
     background-color: rgb(0, 81, 165);
     border-radius: 6px 6px 6px 6px;
     box-shadow: 2px 2px rgba(36, 33, 33, 0.616);
@@ -133,6 +132,7 @@ footer {
     column-gap: 15%;
     padding: 6px;
     background-color: rgb(165, 0, 81);
+    border: solid  rgb(0, 0, 0)2px;
 }
 
 .pwrapper {
@@ -244,6 +244,10 @@ footer {
 .acase7,
 .acase8 {
     max-width: 4rem;
+    border: solid  rgb(255, 255, 255)1px;
+    border-radius: 10px 10px 10px 10px; 
+    
+   
 }
 
 .acase1 {
@@ -334,4 +338,19 @@ footer {
 
 .re_margin {
     padding-top: 1.25rem;
+
+
+}
+.la-home{
+    font-size: 40px;
+}
+
+.la-heart{
+    font-size: 40px;
+}
+.la-file-video{
+    font-size: 40px;
+}
+.la-play{
+    font-size: 40px;
 }
