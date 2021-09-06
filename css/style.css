@@ -128,6 +128,8 @@ footer {
 .fwrapper {
     display: grid;
     grid-column: auto;
+    position: sticky ;
+    bottom: 0%;
     padding: .3rem;
     column-gap: 15%;
     padding: 13px;
@@ -147,7 +149,11 @@ footer {
     row-gap:0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 0.5rem;
+    margin-left:0.45rem;
+}
+.awrapper img {
+    border: solid  rgb(255, 255, 255)1px;
+    
 }
 
 .case1 {
@@ -228,6 +234,7 @@ footer {
 
 .acase0 {
     grid-column: 1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     grid-row: 1;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -244,8 +251,9 @@ footer {
 .acase7,
 .acase8 {
     max-width: 5rem;
+  
 
-    border: solid  rgb(255, 255, 255)1px;
+  
     
     
     
