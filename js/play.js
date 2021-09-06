@@ -33,7 +33,6 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
                     .then(function (json) {
                         let artist = document.querySelector(".n_artiste");
 
-                        console.log(json);
                         artist.textContent = json.username;
                     })
             })

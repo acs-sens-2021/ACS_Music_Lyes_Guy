@@ -23,13 +23,15 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                 })
                 .then((response) => response.json())
                 .then(function (json) {
-                    let my_li = document.createElement("li");
-                    let my_link = document.createElement("a");
+                    let temp = document.querySelector(".tmp_link");
+                    let temp_clone = document.importNode(temp.content, true);
+                    let balise = temp_clone.querySelector("a");
 
-                    my_link.href = "./play.html?id=" + json.id;
-                    my_li.textContent = json.name;
-                    my_link.appendChild(my_li);
-                    my_ul.appendChild(my_link);
+                    balise.href = "./play.html?id=" + json.id;
+
+                    balise = temp_clone.querySelector("li");
+                    balise.textContent = json.name;
+                    my_ul.appendChild(temp_clone);
                 })
         }
     })
