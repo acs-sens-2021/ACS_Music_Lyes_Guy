@@ -11,11 +11,13 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
         for (let cnt = 0; cnt < 20; cnt += 1) {
             // Je cherche mon "elements" qui va contenir mes diapo et je créé une diapo
             let elems = document.querySelector(".elements");
-            let elem = document.createElement("div");
+            let elem = document.createElement("a");
             let pict = document.createElement("img");
 
+            console.log(json[cnt].id);
             // J'ajoute la classe "element" (sans le S) à ma div
             elem.classList.add("element");
+            elem.href = "./details.html?id=" + json[cnt].id;
             // J'indique l'image source et le alt de mon image de diapo
             pict.src = json[cnt].picture;
             pict.alt = json[cnt].id;
@@ -44,14 +46,20 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc",
     })
     .then((response) => response.json())
     .then(function (json) {
-        // Boucle qui va placer dans chaque case : l'image source et le nom en guise d'alt
+        // Boucle qui va placer chaque case : le lien, l'image source et le nom en guise d'alt
         for (let cnt = 1; cnt <= 8; cnt += 1) {
-            let case_name = ".acase" + cnt;
-            let my_case = document.querySelector(case_name);
+            let wrapp = document.querySelector(".awrapper");
+            let c_case = document.createElement("a");
+            let img_case = document.createElement("img");
+            let class_case = "acase" + cnt;
 
-            my_case.src = json[cnt - 1].picture;
-            my_case.alt = json[cnt - 1].id;
-            console.log(json[cnt - 1]);
+            c_case.classList.add(class_case);
+            c_case.href = "./details.html?id=" + json[cnt - 1].id;
+            img_case.src = json[cnt - 1].picture;
+            img_case.alt = json[cnt - 1].id;
+            img_case.style.width = "100%";
+            c_case.appendChild(img_case);
+            wrapp.appendChild(c_case);
         }
     })
 
@@ -96,57 +104,3 @@ function my_carousel() {
         elements.style.transform = `translateX(${decal}px`;
     }
 }
-
-
-
-// Mise en place de la redirection des images du carousel et des cases vers les pages correspondantes 
-// avec les bonnes data.
-
-let case1 = document.querySelector(".acase1");
-let case2 = document.querySelector(".acase2");
-let case3 = document.querySelector(".acase3");
-let case4 = document.querySelector(".acase4");
-let case5 = document.querySelector(".acase5");
-let case6 = document.querySelector(".acase6");
-let case7 = document.querySelector(".acase7");
-let case8 = document.querySelector(".acase8");
-
-case1.addEventListener("click", function () {
-    sessionStorage.album_id = this.alt;
-    window.location = "./details.html";
-})
-
-case2.addEventListener("click", function () {
-    sessionStorage.album_id = case2.alt;
-    window.location = "./details.html";
-})
-
-case3.addEventListener("click", function () {
-    sessionStorage.album_id = case3.alt;
-    window.location = "./details.html";
-})
-
-case4.addEventListener("click", function () {
-    sessionStorage.album_id = case4.alt;
-    window.location = "./details.html";
-})
-
-case5.addEventListener("click", function () {
-    sessionStorage.album_id = case5.alt;
-    window.location = "./details.html";
-})
-
-case6.addEventListener("click", function () {
-    sessionStorage.album_id = case6.alt;
-    window.location = "./details.html";
-})
-
-case7.addEventListener("click", function () {
-    sessionStorage.album_id = case7.alt;
-    window.location = "./details.html";
-})
-
-case8.addEventListener("click", function () {
-    sessionStorage.album_id = case8.alt;
-    window.location = "./details.html";
-})

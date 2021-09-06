@@ -1,4 +1,6 @@
-sessionStorage.track_id = "1201";
+let url = window.location.href;
+
+sessionStorage.track_id = url.substring(url.lastIndexOf('=') + 1);
 
 fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
         headers: {
