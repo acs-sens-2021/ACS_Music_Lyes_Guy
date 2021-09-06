@@ -11,22 +11,26 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[created_at]=desc&page=1
         for (let cnt = 0; cnt < 20; cnt += 1) {
             // Je cherche mon "elements" qui va contenir mes diapo et je créé une diapo
             let elems = document.querySelector(".elements");
-            let elem = document.createElement("div");
-            let pict = document.createElement("img");
+            let temp = document.querySelector(".temp_elem");
+            let temp_clone = document.importNode(temp.content, true);
+            let balise = temp_clone.querySelector("a");
 
-            // J'ajoute la classe "element" (sans le S) à ma div
-            elem.classList.add("element");
+            // Je colle le lien avec l'album_id dans mon href
+            balise.href = "./details.html?id=" + json[cnt].id;
+
+            // Je redéfini ma balise sur l'img du template
+            balise = temp_clone.querySelector("img");
+
             // J'indique l'image source et le alt de mon image de diapo
-            pict.src = json[cnt].picture;
-            pict.alt = json[cnt].id;
+            balise.src = json[cnt].picture;
+            balise.alt = json[cnt].id;
+            
             // Je donne un Z-Index & je met le width 100%
-            pict.style.width = "100%";
-            pict.style.zIndex = "200";
-            // J'ajoute la classe img_diapo à mon image de diapo
-            pict.classList.add("img_diapo");
-            // Je colle mon image dans mon elem puis je colle mon elem dans ma liste "elements"
-            elem.appendChild(pict);
-            elems.appendChild(elem);
+            balise.style.width = "100%";
+            balise.style.zIndex = "200";
+            
+            // Je colle mon template dans ma liste "elements"
+            elems.appendChild(temp_clone);
         }
         // J'appelle la fonction du carousel qui permet son fonctionnement
         my_carousel();
@@ -44,14 +48,27 @@ fetch("http://musics.logikstik.odns.fr/api/albums/?order[recently_played]=desc",
     })
     .then((response) => response.json())
     .then(function (json) {
-        // Boucle qui va placer dans chaque case : l'image source et le nom en guise d'alt
-        for (let cnt = 1; cnt <= 8; cnt += 1) {
-            let case_name = ".acase" + cnt;
-            let my_case = document.querySelector(case_name);
+        let wrapp = document.querySelector(".awrapper");
 
-            my_case.src = json[cnt - 1].picture;
-            my_case.alt = json[cnt - 1].id;
-            console.log(json[cnt - 1]);
+        for (let cnt = 1; cnt <= 8; cnt += 1) {
+            // Je créé un clone de mon template
+            let temp = document.querySelector(".temp_case");
+            let temp_clone = document.importNode(temp.content, true);
+            let balise = temp_clone.querySelector("a");
+            let class_case = "acase" + cnt;
+
+            // Je remplis les données de la balise a de mon template
+            balise.href = "./details.html?id=" + json[cnt - 1].id;
+            balise.classList.add(class_case);
+
+            // Je redéfini ma variable balise sur l'img du template et la remplis avec les data correspondantes
+            balise = temp_clone.querySelector("img");
+            balise.src = json[cnt - 1].picture;
+            balise.alt = json[cnt - 1].id;
+            balise.style.width = "100%";
+
+            // J'ajoute mon clone de template dans mon wrapper pour cases
+            wrapp.appendChild(temp_clone);
         }
     })
 
@@ -96,57 +113,3 @@ function my_carousel() {
         elements.style.transform = `translateX(${decal}px`;
     }
 }
-
-
-
-// Mise en place de la redirection des images du carousel et des cases vers les pages correspondantes 
-// avec les bonnes data.
-
-let case1 = document.querySelector(".acase1");
-let case2 = document.querySelector(".acase2");
-let case3 = document.querySelector(".acase3");
-let case4 = document.querySelector(".acase4");
-let case5 = document.querySelector(".acase5");
-let case6 = document.querySelector(".acase6");
-let case7 = document.querySelector(".acase7");
-let case8 = document.querySelector(".acase8");
-
-case1.addEventListener("click", function () {
-    sessionStorage.album_id = this.alt;
-    window.location = "./details.html";
-})
-
-case2.addEventListener("click", function () {
-    sessionStorage.album_id = case2.alt;
-    window.location = "./details.html";
-})
-
-case3.addEventListener("click", function () {
-    sessionStorage.album_id = case3.alt;
-    window.location = "./details.html";
-})
-
-case4.addEventListener("click", function () {
-    sessionStorage.album_id = case4.alt;
-    window.location = "./details.html";
-})
-
-case5.addEventListener("click", function () {
-    sessionStorage.album_id = case5.alt;
-    window.location = "./details.html";
-})
-
-case6.addEventListener("click", function () {
-    sessionStorage.album_id = case6.alt;
-    window.location = "./details.html";
-})
-
-case7.addEventListener("click", function () {
-    sessionStorage.album_id = case7.alt;
-    window.location = "./details.html";
-})
-
-case8.addEventListener("click", function () {
-    sessionStorage.album_id = case8.alt;
-    window.location = "./details.html";
-})
