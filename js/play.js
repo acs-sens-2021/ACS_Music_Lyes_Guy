@@ -10,6 +10,9 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
     })
     .then((response) => response.json())
     .then(function (json) {
+        let music = document.querySelector(".n_musique");
+
+        music.textContent = json.name;
         fetch("http://musics.logikstik.odns.fr" + json.album, {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem("token"),

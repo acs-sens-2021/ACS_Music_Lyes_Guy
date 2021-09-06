@@ -109,7 +109,7 @@ footer {
 
 .m_buttons {
     background-color: rgb(81, 165, 0);
-    padding:2px;
+    padding: 2px;
 }
 
 .uncolor {
@@ -128,7 +128,7 @@ footer {
 .fwrapper {
     display: grid;
     grid-column: auto;
-    position: sticky ;
+    position: sticky;
     bottom: 0%;
     padding: .3rem;
     column-gap: 15%;
@@ -146,14 +146,15 @@ footer {
 .awrapper {
     display: grid;
     grid-column: auto;
-    row-gap:0.5rem;
+    row-gap: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left:0.45rem;
+    margin-left: 0.45rem;
 }
+
 .awrapper img {
-    border: solid  rgb(255, 255, 255)1px;
-    
+    border: solid rgb(255, 255, 255)1px;
+
 }
 
 .case1 {
@@ -204,6 +205,7 @@ footer {
     grid-column: 4;
     grid-row: 1;
 }
+
 .fcase5 {
     max-width: 3.5rem;
     grid-column: 5;
@@ -239,7 +241,7 @@ footer {
     margin-left: 50%;
     transform: translateX(-50%);
     padding: 5px;
-    
+
 }
 
 .acase1,
@@ -251,13 +253,6 @@ footer {
 .acase7,
 .acase8 {
     max-width: 5rem;
-  
-
-  
-    
-    
-    
-   
 }
 
 .acase1 {
@@ -300,8 +295,16 @@ footer {
     grid-row: 2;
 }
 
+.mcase {
+    grid-column: 1;
+    grid-row: 1;
+    color: white;
+    background-color: rgb(81, 165, 0);
+    padding: 5px;
+}
+
 .diapo {
-    
+
     position: relative;
     overflow: hidden;
     margin-top: 1rem;
@@ -352,18 +355,23 @@ footer {
 
 
 }
-.la-home{
+
+.la-home {
     font-size: 45px;
 }
 
-.la-heart{
+.la-heart {
     font-size: 45px;
 }
-.la-search{
-    font-size:45px;
-}
-.la-play{
+
+.la-search {
     font-size: 45px;
 }
+
+.la-play {
+    font-size: 45px;
+}
+
 .las {
-    color : black;
+    color: black;
+}
