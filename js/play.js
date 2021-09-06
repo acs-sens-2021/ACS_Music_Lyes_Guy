@@ -1,4 +1,4 @@
-sessionStorage.track_id = "1535";
+sessionStorage.track_id = "1201";
 
 fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
         headers: {
@@ -31,6 +31,7 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
                     .then(function (json) {
                         let artist = document.querySelector(".n_artiste");
 
+                        console.log(json);
                         artist.textContent = json.username;
                     })
             })

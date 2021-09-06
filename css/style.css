@@ -120,7 +120,7 @@ footer {
 
 .wrapper {
     display: grid;
-    padding-top: 4rem;
+    padding-top: 2rem;
     grid-column: auto;
     row-gap: 3rem;
 }
@@ -130,9 +130,9 @@ footer {
     grid-column: auto;
     padding: .3rem;
     column-gap: 15%;
-    padding: 6px;
+    padding: 13px;
     background-color: rgb(165, 0, 81);
-    border: solid  rgb(0, 0, 0)2px;
+    /* border: solid  rgb(26, 26, 26)px; */
 }
 
 .pwrapper {
@@ -144,10 +144,10 @@ footer {
 .awrapper {
     display: grid;
     grid-column: auto;
-    row-gap: 1rem;
+    row-gap:0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
 }
 
 .case1 {
@@ -231,7 +231,7 @@ footer {
     grid-row: 1;
     margin-left: 50%;
     transform: translateX(-50%);
-    padding: 7px;
+    padding: 5px;
     
 }
 
@@ -243,7 +243,8 @@ footer {
 .acase6,
 .acase7,
 .acase8 {
-    max-width: 4rem;
+    max-width: 5rem;
+
     border: solid  rgb(255, 255, 255)1px;
     
     
@@ -292,9 +293,10 @@ footer {
 }
 
 .diapo {
+    
     position: relative;
     overflow: hidden;
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 #nav-droite,
