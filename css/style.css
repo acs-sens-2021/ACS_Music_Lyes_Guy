@@ -46,6 +46,10 @@ footer {
     background: black;
 }
 
+#underline {
+    text-decoration: underline;
+}
+
 #txtsplash {
     font-size: larger;
     margin-left: 15%;
@@ -79,6 +83,10 @@ footer {
     text-align: center;
     border: solid black 1.5px;
     color: rgb(81, 165, 0);
+}
+
+.connecter {
+    cursor: pointer;
 }
 
 .rounding {
@@ -130,11 +138,9 @@ footer {
     grid-column: auto;
     position: sticky;
     bottom: 0%;
-    padding: .3rem;
     column-gap: 15%;
     padding: 13px;
     background-color: rgb(165, 0, 81);
-    /* border: solid  rgb(26, 26, 26)px; */
 }
 
 .pwrapper {
@@ -146,15 +152,15 @@ footer {
 .awrapper {
     display: grid;
     grid-column: auto;
-    row-gap: 0.5rem;
+    row-gap: .5rem;
+    column-gap: .5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 0.45rem;
+    justify-content: center;
 }
 
 .awrapper img {
     border: solid rgb(255, 255, 255)1px;
-
 }
 
 .case1 {
@@ -352,8 +358,6 @@ footer {
 
 .re_margin {
     padding-top: 1.25rem;
-
-
 }
 
 .la-home {
@@ -373,5 +377,5 @@ footer {
 }
 
 .las {
-    color : black;
+    color: black;
 }
