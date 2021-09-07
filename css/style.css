@@ -108,8 +108,16 @@ footer {
 }
 
 .m_buttons {
+    display: grid;
+    grid-column: auto;
+   
+    bottom: 0%;
+    padding: .3rem;
+    /* column-gap: 5%; */
+    padding: px;
+
     background-color: rgb(81, 165, 0);
-    padding: 2px;
+    /* padding: 2px; */
 }
 
 .uncolor {
@@ -209,6 +217,12 @@ footer {
 .fcase5 {
     max-width: 3.5rem;
     grid-column: 5;
+    grid-row: 1;
+}
+
+.fcase6 {
+    max-width: 3.5rem;
+    grid-column: 6;
     grid-row: 1;
 }
 
@@ -356,22 +370,9 @@ footer {
 
 }
 
-.la-home {
-    font-size: 45px;
-}
 
-.la-heart {
-    font-size: 45px;
-}
-
-.la-search {
-    font-size: 45px;
-}
-
-.la-play {
-    font-size: 45px;
-}
 
 .las {
     color : black;
+    font-size: 45px;
 }
