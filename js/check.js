@@ -7,6 +7,9 @@ fetch("http://musics.logikstik.odns.fr/api/artists", {
         }
     })
     .then(function (response) {
+        if (response.status == 401) {
+            return (null);
+        }
         return (response.json());
     })
     .then(function (json) {

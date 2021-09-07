@@ -15,10 +15,15 @@ btn.addEventListener("click", function () {
         })
 
         .then(function (response) {
+            if (response.status == 401) {
+                return (null);
+            }
             return (response.json());
         })
         .then(function (json) {
-            sessionStorage.setItem("token", json.token);
-            window.location.replace("./accueil.html");
+            if (json != null) {
+                sessionStorage.setItem("token", json.token);
+                window.location.replace("./accueil.html");
+            }
         })
 });
