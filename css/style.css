@@ -28,6 +28,8 @@ ul {
     background-color: rgb(81, 165, 0);
     padding-top: .1rem;
     padding-bottom: .1rem;
+    display: grid;
+    list-style-type: none;
 }
 
 li {
@@ -85,6 +87,16 @@ footer {
     color: rgb(81, 165, 0);
 }
 
+#txtsplash4 {
+    font-size: medium;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+    color: rgb(81, 165, 0);
+    background: white;
+}
+
 .connecter {
     cursor: pointer;
 }
@@ -130,7 +142,7 @@ footer {
     display: grid;
     padding-top: 2rem;
     grid-column: auto;
-    row-gap: 3rem;
+    row-gap: 2rem;
 }
 
 .fwrapper {
@@ -163,6 +175,11 @@ footer {
     border: solid rgb(255, 255, 255)1px;
 }
 
+.error_case {
+    grid-column: 1;
+    grid-row: 5;
+}
+
 .case1 {
     grid-column: 1;
     grid-row: 1;
@@ -185,7 +202,7 @@ footer {
 
 .case5 {
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 6;
 }
 
 .fcase1 {

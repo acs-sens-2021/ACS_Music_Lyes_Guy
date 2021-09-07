@@ -14,6 +14,7 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
         let my_ul = document.querySelector("ul");
 
         jaquette.src = json.picture;
+        console.log(json.tracks);
         for (let cnt = 0; json.tracks[cnt]; cnt += 1) {
             fetch("http://musics.logikstik.odns.fr" + json.tracks[cnt], {
                     headers: {
@@ -28,9 +29,13 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                     let balise = temp_clone.querySelector("a");
 
                     balise.href = "./play.html?id=" + json.id;
+                    balise.style.gridColumn = "1";
+                    balise.style.gridRow = cnt + 1;
 
                     balise = temp_clone.querySelector("li");
-                    balise.textContent = json.name;
+                    balise.textContent = (cnt + 1) + " - " + json.name;
+
+
                     my_ul.appendChild(temp_clone);
                 })
         }
