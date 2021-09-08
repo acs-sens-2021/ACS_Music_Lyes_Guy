@@ -5,7 +5,7 @@ let mdp = document.querySelector(".mdp");
 
 btn.addEventListener("click", function () {
     if (u_name.value && user.value && mdp.value) {
-        var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,2000}$/;
+        var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$/;
 
         if (mdp.value.match(decimal)) {
             let error_mdp = document.querySelector(".center");
@@ -38,7 +38,7 @@ btn.addEventListener("click", function () {
             let error_mdp = document.querySelector(".center");
 
             error_mdp.style.border = "solid black 1.5px";
-            error_mdp.textContent = "Veuillez respecter le format de mot de passe de l'ANSSI (12 caractères avec une majuscule, une minuscule, un chiffre et un caractère spécial)";
+            error_mdp.textContent = "Veuillez respecter le format de mot de passe de l'ANSSI (au minimum 12 caractères avec une majuscule, une minuscule, un chiffre et un caractère spécial)";
         }
     } else {
         u_name.style.border = "solid black 1.5px";
