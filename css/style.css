@@ -5,7 +5,7 @@
 body {
     font-family: 'Times New Roman', Times, sans-serif;
     margin: 0;
-    padding: 0;
+    aradding: 0;
     background-image: url("../img/background.png");
 }
 
@@ -135,13 +135,14 @@ footer {
 .m_buttons {
     display: grid;
     grid-column: auto;
+    border-radius: 10px;
 
     bottom: 0%;
     padding: .3rem;
     /* column-gap: 5%; */
     padding: px;
 
-    background-color: rgb(81, 165, 0);
+    background-color: rgba(80, 165, 0, 0.767);
     /* padding: 2px; */
 }
 
@@ -274,6 +275,12 @@ footer {
 
 .p_bar {
     margin-top: 1rem;
+    background: white;
+    height: 4px;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+   
+
 }
 
 .acase0 {
@@ -340,7 +347,7 @@ footer {
     grid-column: 1;
     grid-row: 1;
     color: white;
-    background-color: rgb(81, 165, 0);
+    background-color: rgb(80, 165, 0);
     padding: 5px;
 }
 
@@ -402,6 +409,15 @@ footer {
 .las {
     color: black;
     font-size: 45px;
+}
+.la-fast-backward,
+.la-undo-alt,
+.la-play,
+.la-random,
+.la-fast-forward {
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+   
 }
 
 .n_album,
