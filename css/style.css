@@ -124,13 +124,12 @@ footer {
     margin-left: 15%;
     margin-right: 15%;
     max-width: 70%;
-
 }
 
 .m_buttons {
     display: grid;
     grid-column: auto;
-   
+
     bottom: 0%;
     padding: .3rem;
     /* column-gap: 5%; */
@@ -278,7 +277,6 @@ footer {
     margin-left: 50%;
     transform: translateX(-50%);
     padding: 5px;
-
 }
 
 .acase1,
@@ -391,9 +389,7 @@ footer {
     padding-top: 1.25rem;
 }
 
-
-
 .las {
-    color : black;
+    color: black;
     font-size: 45px;
 }

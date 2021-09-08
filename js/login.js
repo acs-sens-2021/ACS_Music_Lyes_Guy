@@ -21,7 +21,13 @@ btn.addEventListener("click", function () {
             return (response.json());
         })
         .then(function (json) {
-            if (json != null) {
+            if (json == null) {
+                let user = document.querySelector(".mail");
+                let mdp = document.querySelector(".mdp");
+
+                user.style.border = "solid red 2px";
+                mdp.style.border = "solid red 2apx";
+            } else {
                 sessionStorage.setItem("token", json.token);
                 window.location.replace("./accueil.html");
             }
