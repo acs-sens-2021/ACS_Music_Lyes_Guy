@@ -16,6 +16,13 @@ btn.addEventListener("click", function () {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
+        .then(function (response) {
+            if (response.status != 401) {
+                u_name.style.border = "3px solid red";
+                user.style.border = "3px solid red";
+                mdp.style.border = "3px solid red";
+            }
+        })
     } else {
         u_name.style.border = "solid black 1.5px";
         user.style.border = "solid black 1.5px";
