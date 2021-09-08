@@ -26,7 +26,7 @@ btn.addEventListener("click", function () {
                 let mdp = document.querySelector(".mdp");
 
                 user.style.border = "solid red 2px";
-                mdp.style.border = "solid red 2apx";
+                mdp.style.border = "solid red 2px";
             } else {
                 sessionStorage.setItem("token", json.token);
                 window.location.replace("./accueil.html");
