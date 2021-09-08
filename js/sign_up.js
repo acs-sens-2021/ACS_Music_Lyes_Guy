@@ -5,7 +5,7 @@ let mdp = document.querySelector(".mdp");
 
 btn.addEventListener("click", function () {
     if (u_name.value && user.value && mdp.value) {
-        var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,2000}$/;
 
         if (mdp.value.match(decimal)) {
             let error_mdp = document.querySelector(".center");
