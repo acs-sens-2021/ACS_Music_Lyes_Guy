@@ -1,6 +1,16 @@
 let url = window.location.href;
+let next = url.substring(url.lastIndexOf("next=") + 5, url.lastIndexOf("?prev"));
+let prev = url.substring(url.lastIndexOf("prev=") + 5);
+let bnext = document.querySelector(".bnext");
+let bprev = document.querySelector(".bprev");
 
-sessionStorage.track_id = url.substring(url.lastIndexOf('=') + 1);
+bnext.href = "./play.html?id=" + next;
+console.log(bnext.href);
+
+bprev.href ="./play.html?id=" + prev;
+
+sessionStorage.track_id = url.substring(url.lastIndexOf("id=") + 3, url.lastIndexOf("?next"));
+console.log(sessionStorage.track_id);
 
 fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
         headers: {

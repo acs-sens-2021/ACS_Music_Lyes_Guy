@@ -9,15 +9,14 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
         }
     })
     .then((response) => response.json())
-    .then(function (json) {
+    .then(function (music) {
         let jaquette = document.querySelector("#jaquette");
         let my_ul = document.querySelector("ul");
 
-        jaquette.src = json.picture;
-        console.log(json.tracks);
-
+        jaquette.src = music.picture;
+        
         // Fetch du nom d'artiste
-        fetch("http://musics.logikstik.odns.fr" + json.artist, {
+        fetch("http://musics.logikstik.odns.fr" + music.artist, {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
                     'Content-type': 'application/json; charset=UTF-8',
@@ -32,8 +31,8 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
             })
 
         // boucle pour la liste des tracks
-        for (let cnt = 0; json.tracks[cnt]; cnt += 1) {
-            fetch("http://musics.logikstik.odns.fr" + json.tracks[cnt], {
+        for (let cnt = 0; music.tracks[cnt]; cnt += 1) {
+            fetch("http://musics.logikstik.odns.fr" + music.tracks[cnt], {
                     headers: {
                         'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
                         'Content-type': 'application/json; charset=UTF-8',
@@ -44,8 +43,24 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                     let temp = document.querySelector(".tmp_link");
                     let temp_clone = document.importNode(temp.content, true);
                     let balise = temp_clone.querySelector("a");
-
                     balise.href = "./play.html?id=" + json.id;
+                    let next ;
+                    if(music.tracks[cnt+1]){
+                        next= music.tracks[cnt+1];
+                        next = next.substring(next.lastIndexOf('/')+1);
+                        balise.href += "?next=" + next;
+                    }
+                    let prev ;
+                    if(music.tracks[cnt-1]){
+                        prev= music.tracks[cnt-1];
+                        prev = prev.substring(prev.lastIndexOf('/')+1);
+                        balise.href += "?prev=" + prev;
+                    }
+
+
+                  
+
+
                     balise.style.gridColumn = "1";
                     balise.style.gridRow = cnt + 1;
 
