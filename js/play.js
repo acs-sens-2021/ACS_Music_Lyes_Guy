@@ -12,7 +12,8 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
     .then(function (json) {
         let music = document.querySelector(".n_musique");
 
-        music.textContent = json.name;
+        music.textContent = "Titre : ";
+        music.textContent += json.name;
         fetch("http://musics.logikstik.odns.fr" + json.album, {
                 headers: {
                     'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
@@ -25,7 +26,8 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
                 let jaquette = document.querySelector("#jaquette");
 
                 jaquette.src = json.picture;
-                album.textContent = json.name;
+                album.textContent = "Album : \n";
+                album.textContent += json.name;
                 fetch("http://musics.logikstik.odns.fr" + json.artist, {
                         headers: {
                             'Authorization': 'Bearer ' + sessionStorage.getItem("token"),
@@ -36,7 +38,8 @@ fetch("http://musics.logikstik.odns.fr/api/tracks/" + sessionStorage.track_id, {
                     .then(function (json) {
                         let artist = document.querySelector(".n_artiste");
 
-                        artist.textContent = json.username;
+                        artist.textContent = "Artiste : "
+                        artist.textContent += json.username;
                     })
             })
     })

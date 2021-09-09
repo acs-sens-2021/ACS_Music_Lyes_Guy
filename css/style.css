@@ -146,13 +146,10 @@ footer {
     display: grid;
     grid-column: auto;
     border-radius: 10px;
-    bottom: 0%;
-    padding: .3rem;
     background-color: rgba(80, 165, 0, 0.767);
     padding: .3rem;
     margin-top: 1rem;
-    margin-bottom: 2rem;
-
+    margin-bottom: 4.25rem;
 }
 
 .uncolor {
@@ -283,26 +280,33 @@ footer {
     color: white;
     background-color: rgb(81, 165, 0);
     padding: 5px;
-    margin-top: 2rem;
+    border-radius: 6px 6px 0 0;
 }
 
 .pcase2 {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 1;
+    grid-row: 2;
     color: white;
     background-color: rgb(81, 165, 0);
     padding: 5px;
-    margin-top: 2rem;
+}
+
+.pcase3 {
+    grid-column: 1;
+    grid-row: 3;
+    color: white;
+    background-color: rgb(81, 165, 0);
+    padding: 5px;
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 1rem;
 }
 
 .p_bar {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
     background: white;
-    height: 4px;
-    margin-bottom: 1rem;
+    height: 5px;
     border-radius: 3px;
-   
-
 }
 
 .acase0 {
@@ -444,6 +448,7 @@ footer {
     color: black;
     font-size: 45px;
 }
+
 .la-fast-backward,
 .la-undo-alt,
 .la-play,
@@ -451,9 +456,10 @@ footer {
 .la-fast-forward {
     color: rgb(255, 255, 255);
     font-size: 45px;
-   
+
 }
 
+.mcase,
 .n_album,
 .n_artiste,
 .n_musique {

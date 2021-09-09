@@ -27,9 +27,8 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
             .then(function (json) {
                 let artist = document.querySelector(".name_artist");
 
-                console.log("artist = ", artist);
-                console.log("ptdr pwet : ", json.username);
-                artist.textContent = json.username;
+                artist.textContent = "Artiste : ";
+                artist.textContent += json.username;
             })
 
         // boucle pour la liste des tracks
