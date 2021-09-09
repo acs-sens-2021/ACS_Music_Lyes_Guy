@@ -5,7 +5,7 @@
 body {
     font-family: 'Times New Roman', Times, sans-serif;
     margin: 0;
-    aradding: 0;
+    padding: 0;
     background-image: url("../img/background.png");
 }
 
@@ -103,6 +103,16 @@ footer {
     background: white;
 }
 
+.txtsplash5 {
+    font-size: medium;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+    color: rgb(81, 165, 0);
+    background: white;
+}
+
 .connecter {
     cursor: pointer;
 }
@@ -136,14 +146,13 @@ footer {
     display: grid;
     grid-column: auto;
     border-radius: 10px;
-
     bottom: 0%;
     padding: .3rem;
-    /* column-gap: 5%; */
-    padding: px;
-
     background-color: rgba(80, 165, 0, 0.767);
-    /* padding: 2px; */
+    padding: .3rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
 }
 
 .uncolor {
@@ -172,7 +181,7 @@ footer {
 .pwrapper {
     display: grid;
     grid-column: auto;
-    column-gap: 2%;
+    column-gap: .3rem;
 }
 
 .awrapper {
@@ -219,6 +228,11 @@ footer {
     grid-row: 6;
 }
 
+.case6 {
+    grid-column: 1;
+    grid-row: 7;
+}
+
 .fcase1 {
     max-width: 3.55rem;
     grid-column: 1;
@@ -255,13 +269,21 @@ footer {
     grid-row: 1;
 }
 
+.mp_case1,
+.mp_case2,
+.mp_case3,
+.mp_case4,
+.mp_case5 {
+    grid-row: 1;
+}
+
 .pcase1 {
     grid-column: 1;
     grid-row: 1;
     color: white;
     background-color: rgb(81, 165, 0);
     padding: 5px;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .pcase2 {
@@ -270,7 +292,7 @@ footer {
     color: white;
     background-color: rgb(81, 165, 0);
     padding: 5px;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .p_bar {
@@ -402,6 +424,18 @@ footer {
     row-gap: 1.5rem;
 }
 
+.regap2 {
+    row-gap: .5rem;
+}
+
+.regap3 {
+    margin-bottom: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
 .re_margin {
     padding-top: 1.25rem;
 }
@@ -424,4 +458,39 @@ footer {
 .n_artiste,
 .n_musique {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.name_artist {
+    background: rgb(81, 165, 0);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.toobig {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    body {
+        background: grey;
+    }
+
+    .mobil {
+        display: none;
+    }
+
+    .toobig {
+        display: block;
+        font-size: x-large;
+        text-align: center;
+        margin-left: 50%;
+        margin-top: 30%;
+        transform: translate(-50%, -50%);
+        max-width: 700px;
+    }
 }
