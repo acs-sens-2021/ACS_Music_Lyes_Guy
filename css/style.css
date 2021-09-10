@@ -309,6 +309,16 @@ footer {
     height: 5px;
     border-radius: 3px;
 }
+.ptplay {
+    width: 16px;
+    height:16px ;
+ 
+    margin-left: 30%;
+    transform: translate(-5%,-30%);
+    border-radius: 50%;
+    border: solid 1.5px rgb(184, 184, 184);
+    background-color: rgb(27, 27, 27);
+}
 
 .acase0 {
     grid-column: 1;
