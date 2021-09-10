@@ -10,6 +10,10 @@ body {
     background-size: cover;
 }
 
+.small_page {
+    background-size: auto;
+}
+
 section {
     width: 70%;
     height: 60%;
