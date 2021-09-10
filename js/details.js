@@ -14,7 +14,7 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
         let my_ul = document.querySelector("ul");
 
         jaquette.src = music.picture;
-        
+
         // Fetch du nom d'artiste
         fetch("http://musics.logikstik.odns.fr" + music.artist, {
                 headers: {
@@ -29,8 +29,10 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                 artist.textContent = "Artiste : ";
                 artist.textContent += json.username;
             })
-
+        let cnt2 = 0;
+        sessionStorage.min_track = music.tracks[cnt2];
         // boucle pour la liste des tracks
+
         for (let cnt = 0; music.tracks[cnt]; cnt += 1) {
             fetch("http://musics.logikstik.odns.fr" + music.tracks[cnt], {
                     headers: {
@@ -43,23 +45,23 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                     let temp = document.querySelector(".tmp_link");
                     let temp_clone = document.importNode(temp.content, true);
                     let balise = temp_clone.querySelector("a");
-                    balise.href = "./play.html?id=" + json.id;
-                    let next ;
-                    if(music.tracks[cnt+1]){
-                        next= music.tracks[cnt+1];
-                        next = next.substring(next.lastIndexOf('/')+1);
+
+                    balise.href = "./play.html?id=" + json.id + "*";
+
+                    if (music.tracks[cnt + 1]) {
+                        let next;
+
+                        next = music.tracks[cnt + 1];
+                        next = next.substring(next.lastIndexOf('/') + 1);
                         balise.href += "?next=" + next;
                     }
-                    let prev ;
-                    if(music.tracks[cnt-1]){
-                        prev= music.tracks[cnt-1];
-                        prev = prev.substring(prev.lastIndexOf('/')+1);
+                    if (music.tracks[cnt - 1]) {
+                        let prev;
+
+                        prev = music.tracks[cnt - 1];
+                        prev = prev.substring(prev.lastIndexOf('/') + 1);
                         balise.href += "?prev=" + prev;
                     }
-
-
-                  
-
 
                     balise.style.gridColumn = "1";
                     balise.style.gridRow = cnt + 1;
@@ -67,8 +69,11 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                     balise = temp_clone.querySelector("li");
                     balise.textContent = (cnt + 1) + " - " + json.name;
 
-
                     my_ul.appendChild(temp_clone);
+                    cnt2 = cnt;
+                })
+                .then(function () {
+                    sessionStorage.max_track = music.tracks[cnt2];
                 })
         }
     })
