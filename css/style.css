@@ -500,7 +500,7 @@ footer {
 
 .jaq_album {
     border-style: solid;
-    border-image: linear-gradient(rgb(165, 0, 81),rgb(0, 81, 165)) 60;
+    border-image: linear-gradient(rgb(9, 158, 22),rgb(0, 81, 165)) 60;
 }
 
 @media screen and (min-width: 768px) {
