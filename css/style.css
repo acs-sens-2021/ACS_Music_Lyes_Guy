@@ -150,8 +150,7 @@ footer {
 .m_buttons {
     display: grid;
     grid-column: auto;
-    /* border-radius: 50px; */
-    background-color: rgba(39, 39, 39, 0.842);
+    background-color: rgba(39, 39, 39, 0.95);
     padding: .3rem;
     margin-top: 1rem;
     margin-bottom: 4.25rem;
@@ -315,7 +314,7 @@ footer {
     border-radius: 3px;
 }
 
-.pbar{
+.pbar {
     width: 70px;
     margin-top: 2rem;
     margin-bottom: 3rem;
@@ -326,10 +325,10 @@ footer {
 
 .ptplay {
     width: 16px;
-    height:16px ;
- 
+    height: 16px;
+
     margin-left: 80%;
-    transform: translate(-5%,-30%);
+    transform: translate(-5%, -30%);
     border-radius: 50%;
     border: solid 2px rgb(235, 235, 235);
     background-color: rgb(27, 27, 27);
@@ -470,11 +469,16 @@ footer {
     padding-top: 1.25rem;
 }
 
-.las {
+.las2 {
     color: black;
     font-size: 45px;
     margin-left: 50%;
-    transform:translate(-50%) ;
+    transform: translate(-50%);
+}
+
+.las {
+    color: black;
+    font-size: 45px;
 }
 
 .la-fast-backward,
@@ -487,7 +491,7 @@ footer {
     font-size: 40px;
 
 
-   
+
 
 }
 
@@ -516,7 +520,7 @@ footer {
 
 .jaq_album {
     border-style: solid;
-    border-image: linear-gradient(rgb(9, 158, 22),rgb(0, 81, 165)) 60;
+    border-image: linear-gradient(rgb(9, 158, 22), rgb(0, 81, 165)) 60;
 }
 
 @media screen and (min-width: 768px) {
