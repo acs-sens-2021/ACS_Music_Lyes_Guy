@@ -12,9 +12,12 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
     .then(function (music) {
         let jaquette = document.querySelector("#jaquette");
         let my_ul = document.querySelector("ul");
+        let album = document.querySelector(".name_album");
 
+        album.textContent = "Album : " + music.name;
         jaquette.src = music.picture;
 
+        console.log(music);
         // Fetch du nom d'artiste
         fetch("http://musics.logikstik.odns.fr" + music.artist, {
                 headers: {
@@ -29,7 +32,9 @@ fetch("http://musics.logikstik.odns.fr/api/albums/" + sessionStorage.album_id, {
                 artist.textContent = "Artiste : ";
                 artist.textContent += json.username;
             })
+
         let cnt2 = 0;
+
         sessionStorage.min_track = music.tracks[cnt2];
         // boucle pour la liste des tracks
 
